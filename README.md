@@ -1,7 +1,7 @@
 # Kruskal-and-Prim-Algorithm
 
-Perhatikan gambar graph berikut ini.
-![soal](<./Graph%20(soal%20MST).jpg>) <br>
+Perhatikan gambar graph berikut ini. <br>
+![soal](<./Graph%20(soal%20MST).jpg>)
 
 1. Mengimplementasikan graph dengan dengan meggunakan adjacency matrix/list.
 2. Mengimplementasikan dua algoritma untuk permasalahan minimum spanning tree
