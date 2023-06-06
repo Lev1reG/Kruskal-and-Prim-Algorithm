@@ -20,7 +20,7 @@ Kruskal's algorithm guarantees that the MST obtained will have the minimum possi
 </br>
 
 ## Time Complexity ##
-The time complexity of Kruskal's algorithm is O(E log E), where E is the number of edges in the graph. Sorting the edges takes O(E log E) time, and the disjoint set operations take nearly constant time on average using heuristics like union by rank and path compression.
+The time complexity of Kruskal's algorithm is ``O(E log E)``, where E is the number of edges in the graph. Sorting the edges takes ``O(E log E)`` time, and the disjoint set operations take nearly constant time on average using heuristics like union by rank and path compression.
 
 ## Summary ##
 Overall, Kruskal's algorithm provides an efficient approach to find the minimum spanning tree in a graph, making it useful in various applications such as network design, clustering, and scheduling.
