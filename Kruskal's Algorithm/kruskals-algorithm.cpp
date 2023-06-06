@@ -73,7 +73,7 @@ class Graph {
 	    	// Initialize the Union-Find
 	    	UF set(E);
 	    	int total = 0;
-	    	cout << "Following are the edges in the constructed MST" << "\n";
+	    	cout << "\nFollowing are the edges in the constructed MST\n";
 	    	for (auto edge : edgelist) {
 	    		int weight = edge[0];
 	    		int vert1 = edge[1];
