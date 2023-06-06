@@ -25,6 +25,9 @@ The time complexity of Kruskal's algorithm is O(E log E), where E is the number 
 ## Summary ##
 Overall, Kruskal's algorithm provides an efficient approach to find the minimum spanning tree in a graph, making it useful in various applications such as network design, clustering, and scheduling.
 
+### Read More ###
+For further explanation, click on [this](https://docs.google.com/document/d/12n9dBXBuOVubDQPRqd-jFxwX-ysVpSQKPoMmCeSDW0Y/edit?usp=sharing)
+
 
 
 
