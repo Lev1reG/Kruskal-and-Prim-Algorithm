@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 int adjacencyMatrix[20][20];
 void displayMatrix(int totalVertices)
 {
