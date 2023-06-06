@@ -1,5 +1,11 @@
 #include <bits/stdc++.h>
+#include <sys/time.h>
+#include <iomanip>
+#include <cmath>
 using namespace std;
+
+// Create struct for time stamp
+struct timeval start, stop;
 
 // Create class for Union-Find
 class UF{
@@ -67,6 +73,8 @@ class Graph {
 
         // Function to implement the Kruskal's Algorithm
 	    void kruskalMST() {
+            // Start measuring the time
+            gettimeofday(&start, 0);
 	    	// Sort all edges ascendingly
 	    	sort(edgelist.begin(), edgelist.end());
 
@@ -74,6 +82,8 @@ class Graph {
 	    	UF set(E);
 	    	int total = 0;
 	    	cout << "\nFollowing are the edges in the constructed MST\n";
+            cout << "\nv1  " << "v2  " << "weight\n";
+            cout << "--------------\n";
 	    	for (auto edge : edgelist) {
 	    		int weight = edge[0];
 	    		int vert1 = edge[1];
@@ -81,16 +91,17 @@ class Graph {
 
 	    		// Take the edge into the MST
 				// if it does not form a cycle
-				cout << "v1\t" << "v2\t" << "weight";
 	    		if (set.find(vert1) != set.find(vert2)) {
 	    			set.unite(vert1, vert2);
 	    			total += weight;
-	    			cout << vert1 << " -- " << vert2 << " == " << weight << endl;
+	    			cout << vert1 << " -- " << vert2 << " == " << weight << "\n";
 	    		}
 	    	}
 			// Display the minimum cost of the MST
-	    	cout << "Minimum Cost Spanning Tree: " << total << endl;
+	    	cout << "Minimum Cost Spanning Tree: " << total << "\n\n";
 
+			// Stop measuring the time
+			gettimeofday(&stop, 0);
             cout << "\n";
 
             for (auto edge : edgelist) {
@@ -100,7 +111,7 @@ class Graph {
 
 	    		// Show which vertices make a cycle
 	    		if (set.find(vert1) == set.find(vert2)) {
-	    			cout << "There is a cycle at " << vert1 << " -- " << vert2 << " == " << weight << endl;
+	    			cout << "There is a cycle at " << vert1 << " -- " << vert2 << " == " << weight << "\n";
 	    		}
 	    	}
 	    }
@@ -126,6 +137,12 @@ int main() {
 
 	// Function call
 	g.kruskalMST();
+
+    // Calculating the execution time
+    long long seconds = start.tv_sec - stop.tv_sec;
+    long long microseconds = start.tv_usec - stop.tv_usec;
+    long double elapsed = seconds*1000 + microseconds*1e-3;
+	cout << "The execution time is " << setprecision(10) << abs(elapsed) << " milliseconds";
 
 	return 0;
 }
