@@ -20,19 +20,20 @@ void add_edge(int baris, int kolom, int weight)
 }
 int main()
 {
-    int vertices = 7;
-    add_edge(0, 1, 2);
-    add_edge(0, 3, 1);
-    add_edge(0, 2, 4);
-    add_edge(1, 3, 3);
-    add_edge(1, 4, 10);
-    add_edge(2, 3, 2);
-    add_edge(2, 5, 5);
-    add_edge(3, 4, 7);
-    add_edge(3, 5, 8);
-    add_edge(3, 6, 4);
-    add_edge(4, 6, 6);
-    add_edge(5, 6, 1);
+    int vertices, edges;
+    cout << "Input number of vertices: ";
+    cin >> vertices;
+    cout << "Input number of edges: ";
+    cin >> edges;
+
+    cout << "Enter the edges in the format: (vertex1 vertex2 weight)\n";
+    cout << "v1 | v2 | w\n";
+    int startVertices, destinationVertices, cost;
+    for (int i = 0; i < edges; i++)
+    {
+        cin >> startVertices >> destinationVertices >> cost;
+        add_edge(startVertices, destinationVertices, cost);
+    }
 
     displayMatrix(vertices);
 }
