@@ -15,8 +15,8 @@ void displayMatrix(int totalVertices)
 }
 void add_edge(int baris, int kolom, int weight)
 { // Karena undirected jadi a ke b dengan b ke a itu sama
-    adjacencyMatrix[baris][kolom] = weight;
-    adjacencyMatrix[kolom][baris] = weight;
+    adjacencyMatrix[baris - 1][kolom - 1] = weight;
+    adjacencyMatrix[kolom - 1][baris - 1] = weight;
 }
 int main()
 {
