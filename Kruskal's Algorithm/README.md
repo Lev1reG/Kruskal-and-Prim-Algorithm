@@ -10,8 +10,8 @@ The algorithm works as follows:
 2. Initialize an empty set to store the MST.
 3. Iterate through the sorted edges in increasing order of weights.
 4. For each edge, check if adding it to the MST creates a cycle. If not, add the edge to the MST.
-  - This cycle check is typically performed using a disjoint set data structure, such as Union-Find.
-  - The Union-Find data structure helps to determine whether two vertices are in the same connected component (set) or not.
+    - This cycle check is typically performed using a disjoint set data structure, such as Union-Find.
+    - The Union-Find data structure helps to determine whether two vertices are in the same connected component (set) or not.
 5. Repeat step 4 until all the vertices are included in the MST or there are no more edges left.
 6. The resulting set of edges forms the minimum spanning tree of the graph.
 
