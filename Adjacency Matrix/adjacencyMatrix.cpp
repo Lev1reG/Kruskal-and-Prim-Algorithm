@@ -36,5 +36,7 @@ int main()
         add_edge(startVertices, destinationVertices, cost);
     }
 
+    cout << "------------------------------------------------------------------\n";
+    cout << "Adjacency Matrix: \n";
     displayMatrix(vertices);
 }
