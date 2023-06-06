@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Create Union-Find class
+// Create class for Union-Find
 class UF{
 	int *parent;
 	int *rank;
@@ -19,18 +19,20 @@ class UF{
 
 	    // Function to find the representative element
 	    int find(int i) {
-	    	if (parent[i] == -1)
+	    	if (parent[i] == -1) {
 	    		return i;
-
-	    	return parent[i] = find(parent[i]);
+			}
+			else {
+	    		return parent[i] = find(parent[i]);
+			}
 	    }
 
-	    // Union function
+	    // Function to do the union
         // If the vertices belongs to the same set,
         // then we should not take the vertices
-	    void unite(int x, int y) {
-	    	int set1 = find(x);
-	    	int set2 = find(y);
+	    void unite(int vert1, int vert2) {
+	    	int set1 = find(vert1);
+	    	int set2 = find(vert2);
 
 	    	if (set1 != set2) {
 	    		if (rank[set1] < rank[set2]) {
@@ -63,13 +65,13 @@ class Graph {
 	    	edgelist.push_back({weight, vert1, vert2});
 	    }
 
-        // Function to implement Kruskal's Algorithm
+        // Function to implement the Kruskal's Algorithm
 	    void kruskalMST() {
-	    	// Sort all edges
+	    	// Sort all edges ascendingly
 	    	sort(edgelist.begin(), edgelist.end());
 
 	    	// Initialize the Union-Find
-	    	UF set(V);
+	    	UF set(E);
 	    	int total = 0;
 	    	cout << "Following are the edges in the constructed MST" << "\n";
 	    	for (auto edge : edgelist) {
@@ -77,13 +79,16 @@ class Graph {
 	    		int vert1 = edge[1];
 	    		int vert2 = edge[2];
 
-	    		// Take this edge in MST if it does not forms a cycle
+	    		// Take the edge into the MST
+				// if it does not form a cycle
+				cout << "v1\t" << "v2\t" << "weight";
 	    		if (set.find(vert1) != set.find(vert2)) {
 	    			set.unite(vert1, vert2);
 	    			total += weight;
 	    			cout << vert1 << " -- " << vert2 << " == " << weight << endl;
 	    		}
 	    	}
+			// Display the minimum cost of the MST
 	    	cout << "Minimum Cost Spanning Tree: " << total << endl;
 
             cout << "\n";
@@ -93,7 +98,7 @@ class Graph {
 	    		int vert1 = edge[1];
 	    		int vert2 = edge[2];
 
-	    		// Take this edge in MST if it does not forms a cycle
+	    		// Show which vertices make a cycle
 	    		if (set.find(vert1) == set.find(vert2)) {
 	    			cout << "There is a cycle at " << vert1 << " -- " << vert2 << " == " << weight << endl;
 	    		}
@@ -112,6 +117,7 @@ int main() {
     Graph g(numVertices, numEdges);
 
     cout << "Enter the edges in the format: (vertex1 vertex2 weight)\n";
+	cout << "v1 | v2 | w\n";
     int vert1, vert2, weight;
     for(int i = 0; i < numEdges; i++) {
         cin >> vert1 >> vert2 >> weight;
