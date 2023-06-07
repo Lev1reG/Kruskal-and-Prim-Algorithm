@@ -15,5 +15,5 @@ Perhatikan gambar graph berikut ini. <br>
 | No. | Nama Lengkap                    | NIM                  |
 | --- | ------------------------------- | -------------------- |
 | 1.  | Deren Tanaphan                  | 22/503261/TK/54976   |
-| 2.  | Sakti Cahaya Buana              | 22/503237/TK/54974   |
+| 2.  | Sakti Cahya Buana              | 22/503237/TK/54974   |
 | 3.  | Sulaiman Fawwaz Abdillah Karim  | 22/493813/TK/54120   |
